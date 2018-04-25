@@ -10,7 +10,21 @@ const _ = require('lodash');
  */
 exports.updateStudentScore = (store, { name, scores }) => {
     // code here
+    let i = 0;
+    _.forEach(store, (value) => {
+        let index = value.students.length + 1;
+        if(value.subject == 'math'){
+            store[i].students.splice(index, 0, {name: name, score: scores.math});
+        }
+        else if(value.subject == 'science'){
+            store[i].students.splice(index, 0, {name: name, score: scores.science});
+        }
+        i++;
+    })
+
+    return store;
 };
+
 
 /**
  * @params {Object} store

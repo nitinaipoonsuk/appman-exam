@@ -17,7 +17,10 @@ app.use(cors());
 app.use(bodyPaser.json());
 app.use(bodyPaser.urlencoded({ extended: true }));
 
-app.post('/api/login', async (req, res, next) => {
+//test express
+app.get('/api/', (req, res) => res.send('Hello World!'))
+
+app.post('/api/login/', async (req, res, next) => {
     const EMAIL = 'example@appman.co.th';
     const PASSWORD = 'password';
     const email = _.get(req, ['body', 'email']);
@@ -41,3 +44,10 @@ app.post('/api/login', async (req, res, next) => {
 });
 
 app.listen(3000, () => console.log('app start @ port 3000'));
+
+/*const express = require('express')
+const app = express()
+
+app.get('/api/', (req, res) => res.send('Hello World!'))
+
+app.listen(3000, () => console.log('Example app listening on port 3000!'))*/

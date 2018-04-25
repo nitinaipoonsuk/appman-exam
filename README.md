@@ -14,10 +14,6 @@ $ npm install
 
 ![](screenshots/ui-layout.gif)
 
-```
-$ npm run client // open localhost:8080
-```
-
 - Label
 - Logo
   -  ใช้ไฟล์ logo.svg
